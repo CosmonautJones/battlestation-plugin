@@ -1,0 +1,18 @@
+{
+  "name": "battlestation-plugin",
+  "owner": {
+    "name": "CosmonautJones"
+  },
+  "plugins": [
+    {
+      "name": "battlestation",
+      "source": "./",
+      "description": "Ultimate battle coding station — security recon, exploit dev, fan-out research, 4-layer browser automation, session lifecycle, and self-healing agent patterns.",
+      "version": "1.0.0"
+    }
+  ],
+  "metadata": {
+    "description": "Turns Claude Code into an autonomous multi-domain battle station. Skills for security testing, CTF/exploit development, parallel research, token-efficient browser automation, and session lifecycle management. Built from patterns extracted from 27+ advanced Claude Code sources.",
+    "version": "1.0.0"
+  }
+}

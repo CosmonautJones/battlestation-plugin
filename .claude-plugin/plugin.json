@@ -1,0 +1,9 @@
+{
+  "name": "battlestation",
+  "version": "1.0.0",
+  "description": "Ultimate battle coding station — security recon, exploit dev, fan-out research, 4-layer browser automation, session lifecycle management, and self-healing agent patterns. Turns Claude Code into a multi-domain autonomous powerhouse.",
+  "author": {
+    "name": "CosmonautJones"
+  },
+  "license": "MIT"
+}

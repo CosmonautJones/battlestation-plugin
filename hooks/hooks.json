@@ -1,0 +1,39 @@
+{
+  "hooks": [
+    {
+      "matcher": {
+        "event": "PreToolUse",
+        "tool": "Read"
+      },
+      "hooks": [
+        {
+          "type": "command",
+          "command": "bash -c 'FILE=\"$TOOL_INPUT_FILE_PATH\"; if [ -f \"$FILE\" ] && [ $(wc -l < \"$FILE\") -gt 2000 ]; then echo \"WARNING: File has $(wc -l < \"$FILE\") lines (>2000 limit). Use offset and limit parameters to read in chunks. Example: Read with offset=0 limit=500, then offset=500 limit=500, etc.\" >&2; exit 2; fi'"
+        }
+      ]
+    },
+    {
+      "matcher": {
+        "event": "PostToolUse",
+        "tool": "Edit"
+      },
+      "hooks": [
+        {
+          "type": "prompt",
+          "prompt": "A file was just edited. If this was a source file (not a test, config, or doc file), check if related tests exist and run them. If tests fail, fix the issue before proceeding."
+        }
+      ]
+    },
+    {
+      "matcher": {
+        "event": "SubagentStop"
+      },
+      "hooks": [
+        {
+          "type": "command",
+          "command": "bash -c 'echo \"[$(date +%Y-%m-%dT%H:%M:%S)] Agent completed: $AGENT_NAME\" >> ~/.claude/logs/agent_activity.log 2>/dev/null || true'"
+        }
+      ]
+    }
+  ]
+}

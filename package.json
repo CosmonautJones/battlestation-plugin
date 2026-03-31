@@ -1,0 +1,34 @@
+{
+  "name": "@cosmonautjones/battlestation-plugin",
+  "version": "1.0.0",
+  "description": "Ultimate battle coding station for Claude Code — security recon, exploit dev, fan-out research, browser automation, and self-healing agents",
+  "type": "module",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "plugin",
+    "agents",
+    "skills",
+    "security",
+    "recon",
+    "ctf",
+    "exploit",
+    "research",
+    "playwright",
+    "automation",
+    "battlestation"
+  ],
+  "author": "CosmonautJones",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CosmonautJones/battlestation-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CosmonautJones/battlestation-plugin/issues"
+  },
+  "homepage": "https://github.com/CosmonautJones/battlestation-plugin#readme",
+  "scripts": {
+    "test": "node --test test/validate-plugin.test.js"
+  }
+}
