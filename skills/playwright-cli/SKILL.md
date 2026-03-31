@@ -7,6 +7,14 @@ argument-hint: <url_or_task_description>
 
 # /playwright-cli — 4-Layer Token-Efficient Browser Automation
 
+## Execution Flow
+
+1. **Parse target** (URL or task description)
+2. **Select layer** based on complexity (Layer 1 for simple navigation, Layer 2-3 for QA testing)
+3. **Execute via Playwright CLI** (NOT MCP — saves 90K tokens)
+4. **Save accessibility tree to disk**, feed only summaries to Claude
+5. **Return results** with screenshots for failures
+
 ## Why CLI Over MCP
 
 The Playwright MCP server dumps the **entire website accessibility tree** into Claude's context window — up to 90,000 tokens per page. The Playwright CLI saves the tree to **local disk** and only feeds Claude a condensed summary. Same capability, fraction of the token cost.
